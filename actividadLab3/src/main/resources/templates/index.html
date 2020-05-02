@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Inicio</title>
+</head>
+<body>
+	<h1>Estudiante</h1>
+	<form th:action="@{/formdata}" th:object=${student} method="post">
+		<label>Nombre: </label> 
+		<input type="text" th:field="*{nombre}"/>
+		<br>
+		<label>apellido: </label>
+		<input type="text" th:field="*{apellido}"/>
+		<br>
+		<label>fecha de Entrada: </label>
+		<input type="date" th:field="*{fEntrada}"/>
+		<br>
+		<label>Carrera: </label>
+		<input type="text" th:field="*{carrera}"/>
+		<br>
+		<label>Activo: </label>
+		<input type="radio" th:field="*{estado}" th:value="${true}"/>
+		<label>Inactivo: </label>
+		<input type="radio" th:field="*{estado}" th:value="${false}"/>
+		
+		<input type="submit" value="Enviar"/>
+	</form>
+</body>
+</html>
